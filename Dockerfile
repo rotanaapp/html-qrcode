@@ -6,3 +6,32 @@ COPY . ./
 
 EXPOSE 80
 CMD apachectl -D FOREGROUND
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
