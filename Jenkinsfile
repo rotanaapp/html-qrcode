@@ -1,8 +1,9 @@
 pipeline {
     agent any
+    stages {
         stage('Deploy html site') {
             steps {
-                echo "Starting docker build..."
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'HTML QR CODE', reportTitles: '', useWrapperFileDirectly: true])
             }
         }
         stage('Build Docker Image') {
@@ -29,4 +30,5 @@ pipeline {
                 sh 'ssh root@172.31.26.159 /opt/mydeployment/deploy.sh'
             }
         }
+    }
 }
